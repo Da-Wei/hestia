@@ -1,0 +1,13 @@
+GEM
+  specs:
+    librrd (1.0.4)
+    rmodbus (1.2.2)
+    serialport (1.2.1)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  librrd
+  rmodbus
+  serialport
