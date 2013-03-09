@@ -1,8 +1,8 @@
-#include <ModbusMaster.h>
-
 #include "inverter.h"
 
 unsigned long delayCounter;
+
+Inverter inverter = Inverter();
 
 void displayMenu() {
   Serial.println('Hestia');
@@ -13,16 +13,18 @@ void displayMenu() {
 
 void setup()
 {
-  delayCounter = millis()
+  delayCounter = millis();
+  inverter.setSlaveID(2);
 }
 
 void loop()
 {
   InverterSensors sensors;
+  char cmd;
 
   if ( ( millis() - delayCounter ) >= 10000 ) {
     // Request inverter for values
-    sensors = inverter.get();
+    inverter.get(&sensors);
 
     // Store values with timestamp
     // tstamp = getTimestamp();
@@ -35,7 +37,7 @@ void loop()
   // Analyse and send action(s)
   
   // Answer operator's request
-  if ( Serial.avalaible() > 0 ){
+  if ( Serial.available() > 0 ){
     cmd = Serial.read();
     switch(cmd) {
     case '\n':

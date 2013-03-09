@@ -9,9 +9,14 @@ struct InverterSensors {
 
 class Inverter {
  public:
-  InverterSensors get(void);
-  int start(void);
-  int stop(void);
+  Inverter();
+  Inverter(int slaveID);
+  bool get(InverterSensors *sensors);
+  int start();
+  int stop();
+  void setSlaveID(int slaveID);
+ private:
+  int slaveID;
 };
 
 #endif
