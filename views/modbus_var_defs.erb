@@ -1,0 +1,19 @@
+<html>
+<body>
+
+<form action="/device" method="POST">
+  <input type="text" name="modbusvardef[name]"/>
+  <input type="hidden" name="modbusvardef[type]" value="register"/>
+  <input type="submit" value="New ModBusVarDef >>"/>
+</form>
+
+<h2>My Variables</h2>
+ 
+<ul>
+  <% @devices.each do |device| %>
+    <li><a href="/device/<%= device.id %>"><%= device.name %></a></li>
+  <% end %>
+</ul>
+
+</body>
+</html>

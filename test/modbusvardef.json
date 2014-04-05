@@ -1,0 +1,8 @@
+{ "modbusvardef" :
+  [{
+    "name":"H23",
+    "description":"Activate modbus",
+    "type":"ModbusCoilVar",
+    "default": 0
+  }]
+}

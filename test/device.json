@@ -1,0 +1,12 @@
+{
+    "name": "PAC",
+    "type": "ModbusDevice",
+    "port": "/dev/ttyUSB0",
+    "speed": 9600,
+    "slave_id": 1,
+    "modbus_vars": [{
+	"name": "H23",
+	"description": "Activate Modbus",
+	"type": "ModbusCoilVar"
+    }]
+}
